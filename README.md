@@ -26,10 +26,11 @@ Designed for use within Rails, to use, add a file in `config/checks.yml` with ro
 
 ```YAML
 ---
-group:
-  key_a: "uuid-goes-here"
-other:
-  key_b: "uuid-goes-here"
+checks:
+  group:
+    key_a: "uuid-goes-here"
+  other:
+    key_b: "uuid-goes-here"
 ```
 
 Where `group` and `other` are groups, and each pair underneath is a key combined with a [healthchecks.io](https://healthchecks.io) UUID. It's designed
