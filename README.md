@@ -1,8 +1,8 @@
 # Checks
 
-Checks is a simple API wrapper for health check services, Ala Healthchecks.io and Dead Man's Snitch.
+Checks is a simple API wrapper for health check services, Ala [healthchecks.io](https://healthchecks.io) and Dead Man's Snitch.
 
-Currently we only support healthchecks, but we're open to any service you can wish to use.
+Currently we only support [healthchecks.io](https://healthchecks.io), but we're open to any service you can wish to use.
 
 ## Installation
 
@@ -32,7 +32,7 @@ other:
   key_b: "uuid-goes-here"
 ```
 
-Where `group` and `other` are groups, and each pair underneath is a key combined with a `healthchecks.io` UUID. It's designed
+Where `group` and `other` are groups, and each pair underneath is a key combined with a [healthchecks.io](https://healthchecks.io) UUID. It's designed
 to be the id-relevant to the specific healthcehck service.
 
 Then, in your code, to trigger a checkin:
@@ -54,7 +54,7 @@ Finally, to invoke a manual specific id (e.g. from code):
 Checkins.manual_checkin "my-uuid-here"
 ```
 
-Note that currently it is tied to healthchecks, but the plan is to add support for other services longer term.
+Note that currently it is tied to [healthchecks.io](https://healthchecks.io), but the plan is to add support for other services longer term.
 
 ## Development
 
