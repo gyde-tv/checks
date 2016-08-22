@@ -15,7 +15,7 @@ class Checks
   end
 
   def initialize
-    self.config_path = defined?(Rails) ? Rails.root : 'config/checks.yml'
+    self.config_path = defined?(Rails) ? Rails.root.join('config/checks.yml').to_s : 'config/checks.yml'
   end
 
   def config_path=(value)
