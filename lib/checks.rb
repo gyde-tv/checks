@@ -1,4 +1,4 @@
-require "checks/version"
+require 'checks/version'
 require 'singleton'
 require 'net/http'
 
@@ -6,13 +6,26 @@ class Checks
 
   include Singleton
 
+  attr_accessor :config_path
+
   class << self
-    delegate :manual_checkin, :checkin, :checkin!, to: :instance
+    def manual_checkin(*args); instance.manual_checkin(*args); end
+    def checkin(*args); instance.checkin(*args); end
+    def checkin!(*args); instance.checkin!(*args); end
+  end
+
+  def initialize
+    self.config_path = defined?(Rails) ? Rails.root : 'config/checks.yml'
+  end
+
+  def config_path=(value)
+    @config_path = value
+    reload!
   end
 
   def config
     @config ||= begin
-      path = Rails.root.join('config/checks.yml').to_s
+      path = config_path.to_s
       return {} unless ::File.exist?(path)
       YAML.load_file(path).fetch('checks')
     end
